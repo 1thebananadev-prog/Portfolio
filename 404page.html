@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>404 - Page Not Found</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&family=Indie+Flower&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --yellow:#ffe54c;
+      --green:#24c26b;
+      --muted:#7a7a7a;
+      --note-red:#d7263d;
+      --white:#fff;
+      --black:#000;
+      --shadow:0 10px 30px rgba(0,0,0,0.25);
+    }
+    *{box-sizing:border-box;margin:0;padding:0;}
+    body {
+      background:linear-gradient(180deg,#e9e9e9 0%,#f7f7f7 100%);
+      font-family:'Poppins',sans-serif;
+      color:var(--black);
+      display:flex;align-items:center;justify-content:center;
+      min-height:100vh;overflow:hidden;padding:20px;
+    }
+    .container {
+      position:relative;
+      background:var(--white);
+      border-radius:12px;
+      padding:40px;
+      max-width:950px;width:100%;
+      display:flex;flex-wrap:wrap;gap:30px;align-items:center;justify-content:center;
+      transform:rotate(-1.8deg);
+      box-shadow:var(--shadow);
+      background-image:
+        linear-gradient(0deg, rgba(0,0,0,0.01) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0,0,0,0.01) 1px, transparent 1px);
+      background-size:100% 28px,28px 100%;
+    }
+    /* Handwritten note */
+    .handwritten-note {
+      position:absolute;right:20px;top:18px;
+      font-family:'Indie Flower',cursive;
+      font-size:15px;color:var(--note-red);
+      transform:rotate(-4deg);
+    }
+    .sticky {
+      position:absolute;
+      padding:8px 14px;border-radius:6px;
+      box-shadow:0 6px 18px rgba(0,0,0,0.12);
+      font-weight:700;font-size:14px;
+    }
+    .sticky.yellow {background:var(--yellow);color:#000;left:-22px;top:-22px;transform:rotate(-8deg);}
+    .sticky.green {background:var(--yellow);color:#000;right:-22px;bottom:-22px;transform:rotate(8deg);}
+    .content {flex:1 1 360px;}
+    h1 {font-size:50px;font-weight:800;margin-bottom:6px;}
+    h2.marker {
+      display:inline-block;
+      background:linear-gradient(90deg,rgba(255,235,59,0.95)0%,rgba(255,235,59,0.85)100%);
+      padding:4px 8px;border-radius:3px;
+      font-size:22px;font-weight:600;margin-bottom:16px;
+    }
+    p {font-size:15px;margin-bottom:20px;line-height:1.6;}
+    ul.features {list-style:none;margin-bottom:22px;font-size:14px;}
+    ul.features li {margin-bottom:8px;display:flex;align-items:center;}
+    ul.features li::before {content:"✔";color:var(--green);margin-right:8px;}
+    .buttons {display:flex;gap:12px;flex-wrap:wrap;}
+    .btn {
+      background:var(--yellow);color:var(--black);
+      padding:10px 22px;border-radius:26px;
+      font-weight:600;font-size:14px;text-decoration:none;
+      box-shadow:0 5px 12px rgba(0,0,0,0.15);
+      transition:all .3s ease;
+    }
+    .btn:hover {background:#ffd900;transform:translateY(-2px);}
+    .visual {flex:1 1 340px;text-align:center;}
+    .badge404 {
+      font-size:100px;font-weight:800;color:var(--black);
+      text-shadow:3px 3px 0 var(--yellow);
+      margin-bottom:16px;
+    }
+    .photo-card {
+      display:inline-block;
+      padding:10px;background:var(--white);
+      border-radius:18px;box-shadow:0 10px 20px rgba(0,0,0,0.1);
+      position:relative;
+    }
+    .photo-card::before {
+      content:"";
+      position:absolute;top:0;left:0;width:100%;height:5px;background:var(--yellow);
+    }
+    .photo-card img {
+      width:240px;height:320px;object-fit:cover;border-radius:10px;display:block;
+    }
+    @media(max-width:768px){
+      .container {flex-direction:column;text-align:center;padding:30px;}
+      .badge404{font-size:80px;}
+    }
+    @media(max-width:480px){
+    h1{font-size:32px}
+    h2.marker{font-size:18px}
+    p{font-size:14px}
+    .photo-card img{width:100%;height:auto}
+    .container{padding:20px;gap:20px}
+    .buttons{flex-direction:column}
+    .btn{width:100%;text-align:center}
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="sticky yellow">Lost?</div>
+    <div class="sticky green">Oops!</div>
+    <div class="handwritten-note">
+      Need more info?<br><span style="font-size:13px;color:#b33;">Contact me </span>
+    </div>
+
+    <!-- Left content -->
+    <div class="content">
+      <h1>Oops!</h1>
+      <h2 class="marker">Page Not Found</h2>
+      <p>
+        The page you’re looking for doesn’t exist or may have been moved.<br>
+        If you’d like to obtain this project or need assistance, please reach out and I’ll gladly provide it to you.
+      </p>
+      
+      <div class="buttons">
+        <a href="mailto:0idrissisaad@gmail.com?subject=Support%20Request" class="btn">Contact Me</a>
+        <a href="index.html" class="btn">Back to Home</a>
+      </div>
+    </div>
+
+    <!-- Right content -->
+    <div class="visual">
+      <div class="badge404">404</div>
+      <div class="photo-card">
+        <img src="image.png" alt="Profile Picture"/>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
